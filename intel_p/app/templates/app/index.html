@@ -1,0 +1,241 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-12">
+        <form  style="background-color:rgb(11, 173, 248);" class="card card-sm">
+            <div class="card-body row no-gutters align-items-center">
+                <div class="col">
+                    <input class="form-control form-control-borderless" type="search" placeholder="Faites votre Recherche de produit exemple: Ordinateur" name="item-name" >
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-success" type="submit">Rechercher</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<br><br><br><br><br>
+
+<div class="row">
+    {%for produit in produit_object%}
+    <div class="col-md-3">
+        <div class="card">
+            <img width="250px" height="300px" src="{{produit.image}}" class="card-ing-top">
+            <div class="card-body"> 
+                <div id="aa{{produit.id}}" style="color:rgb(15, 11, 248);" class=" card-title">{{produit.nom}}</div>
+                <div id="prix{{produit.id}}" class="card-text">{{produit.prix}}</div>
+                <a class="btn btn-warming" href="{{ produit.id }}" style="color: rgb(242, 250, 240); background-color:orange;">Details</a>
+                <button id="{{produit.id}}" class="btn ajout btn-success">Commander</button>
+            </div>
+        </div>
+    </div>
+
+    {%endfor%}
+</div>
+
+
+<div class="row mt-3">
+    <div class="col-md offset-md-4">
+        <ul class="pagination">
+            {%if produit_object.has_previous%}
+            <li class="page-item">
+                <a class="page-link" href="?page={{produit_object.previous_page_number}}"> Précedent</a>
+            </li>
+            {%endif%}
+
+            <li class="page-item active">
+                <a class="page-link" href="?page={{produit_object.number}}">{{produit_object.number }} </a>
+            </li>
+
+            {%if produit_object.has_next%}
+            <li class="page-item">
+                <a class="page-link" href="?page={{produit_object.next_page_number}}"> Suivant</a>
+            </li>
+            {%endif%}
+        </ul>
+    </div>
+
+    <!-- Footer -->
+<footer class="text-center text-lg-start bg-white text-muted">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <!-- Left -->
+      <div class="me-5 d-none d-lg-block">
+        <span>à propos :</span>
+      </div>
+      <!-- Left -->
+  
+      <!-- Right -->
+      <div>
+        <a href="" class="me-4 link-secondary">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="me-4 link-secondary">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="me-4 link-secondary">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="me-4 link-secondary">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="me-4 link-secondary">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="me-4 link-secondary">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+  
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3 text-secondary"></i>INTELCORPORATION
+            </h6>
+            <p>
+              INTELCORPORATION est une boite informatique basée dans la zone d'activités diverses(ZAD) de Ouaga,
+                Plusieurs offres de services émanent de cette boite notemment la maintenance informatique orientée hardware et software,
+                mais elle fait également dans le commerce d'outils informatiques.
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Conception
+            </h6>
+            <p>
+              <a href="#!" class="text-reset">Apt-Get ETS</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">BONI A Fatao</a>
+            </p>
+            <h6 class="text-uppercase fw-bold mb-4">
+              CONTACT
+            </h6>
+            <p>
+              <a href="" class="text-reset">fataoboni36@gmail.com</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              NOS RESEAUX
+            </h6>
+            <p>
+              <a href="#!" class="text-reset">facebook</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">whatsapp</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">instagram</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">tik-tok</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">NOUS CONTACTER</h6>
+            <p><i class="fas fa-home me-3 text-secondary"></i>Avenu Bila Zagré</p>
+            <p>
+              <i class="fas fa-envelope me-3 text-secondary"></i>
+              IntelcorOuaga1@gmail.com
+            </p>
+            <p><i class="fas fa-phone me-3 text-secondary"></i> +226 64 05 85 72</p>
+            <p><i class="fas fa-print me-3 text-secondary"></i> +226 01 71 08 72 </p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+      © 2021 APT-GET:
+      <a class="text-reset fw-bold" href="https://apt-get.com/">BONI_apt-get.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+</div>
+
+
+{%endblock%}
+
+
+
+
+
+<!------javascript-->
+
+
+
+{% block js %} 
+<script type="text/javascript">
+
+  if(localStorage.getItem('Panier') == null){
+      var Panier={};
+  }else{
+      Panier=JSON.parse(localStorage.getItem('Panier'));
+  }
+  $(document).on('click', '.ajout',function(){
+      console.log('ajouter');
+      var item_id=this.id.toString();
+      console.log(item_id);
+      if(Panier[item_id] != undefined){
+          quantite= Panier[item_id][0]+1;
+          Panier[item_id][0] = quantite;
+          Panier[item_id][2] +=parseFloat(document.getElementById("prix"+item_id).innerHTML);
+        }
+        else{ 
+          quantite=1;
+          prix =parseFloat(document.getElementById("prix"+item_id).innerHTML);
+          nom=document.getElementById("aa"+item_id).innerHTML; 
+          Panier[item_id]=[quantite,nom,prix];
+        }
+        console.log(Panier);
+        localStorage.setItem('Panier', JSON.stringify(Panier));
+        document.getElementById('Panier').innerHTML="Panier("+Object.keys(Panier).length+")";
+  });
+  AffichList(Panier);
+    function AffichList(Panier){
+        var panierString="";
+        panierString += "<h5>Votre liste</h5>";
+        var index =1;
+        for(var x in Panier){
+        panierString += index;
+        panierString += document.getElementById("aa" + x) + " quantité: " + Panier[x][0] + "</br>";
+        index+=1;
+        }
+        panierString += "<a href='/checkoutt' class='btn btn-primary' >Vérification</a>";
+        $('[data-toggle="popover"]').popover();
+        document.getElementById('Panier').setAttribute('data-content',panierString);
+    
+    }
+  </script>
+
+{%endblock%}
+

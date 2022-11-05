@@ -1,0 +1,225 @@
+
+{% extends "app/base.html" %}
+
+
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-12">
+      <p><h1>Votre liste de produit dans le panier</h1></p>
+      <ul class="list-group" id="item-list" name="item-list">
+
+      </ul>
+      <br><br><br>
+      <p style="text-align: center;"><h1>  Identifiez-vous svp!</h1></p>
+      <form method="POST">
+        {%csrf_token%}
+        <input type="hidden" name="items" id="items">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Nom</label>
+            <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Email/Numéro de téléphone</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="Entrez votre mail ou votre téléphone svp">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress2">Addresse</label>
+          <input type="text" class="form-control" id="adresse" name="adresse" placeholder="Facultatif">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">Ville</label>
+            <input type="text" class="form-control" id="ville" name="ville" placeholder="Dans quelle ville habitez vous svp?">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputState" >Pays</label>
+            <select id="pays" name="pays" class="form-control">
+              <option selected>Burkina Faso</option>
+              <option>Mali</option>
+              <option>Togo</option>
+              <option>Benin</option>
+              <option>Niger</option>
+              <option>cote d'ivoire</option>
+              <option>Tchad</option>
+              <option>Nigeria</option>
+              <option>Ghana</option>
+            </select>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputZip">Téléphone</label>
+            <input name="zipcode" id="zipcode" type="text" class="form-control">
+          </div>
+          <div class="form-group col-md-2">
+          </div>
+        <button type="submit" class="btn btn-primary">Commander</button>
+      </form>
+    </div>
+</div>
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-white text-muted">
+      <!-- Section: Social media -->
+      <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        <!-- Left -->
+        <div class="me-5 d-none d-lg-block">
+          <span>à propos :</span>
+        </div>
+        <!-- Left -->
+    
+        <!-- Right -->
+        <div>
+          <a href="" class="me-4 link-secondary">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="" class="me-4 link-secondary">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="" class="me-4 link-secondary">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="" class="me-4 link-secondary">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="" class="me-4 link-secondary">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="" class="me-4 link-secondary">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <!-- Right -->
+      </section>
+      <!-- Section: Social media -->
+    
+      <!-- Section: Links  -->
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Content -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                <i class="fas fa-gem me-3 text-secondary"></i>INTELCORPORATION
+              </h6>
+              <p>
+                INTELCORPORATION est une boite informatique basée dans la zone d'activités diverses(ZAD) de Ouaga,
+                Plusieurs offres de services émanent de cette boite notemment la maintenance informatique orientée hardware et software,
+                mais elle fait également dans le commerce d'outils informatiques.
+              </p>
+            </div>
+            <!-- Grid column -->
+    
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                CONCEPTION
+              </h6>
+              <p>
+                <a href="#!" class="text-reset">APT-GET ETS</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">BONI A Fatao</a>
+              </p>
+              <h6 class="text-uppercase fw-bold mb-4">
+                CONTACT
+              </h6>
+              <p>
+                <a href="" class="text-reset">fataoboni36@gmail.com</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+    
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                NOS RESEAUX
+              </h6>
+              <p>
+                <a href="#!" class="text-reset">facebook</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">whatsapp</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">instagram</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">tik-tok</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+    
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">NOUS CONTACTER</h6>
+              <p><i class="fas fa-home me-3 text-secondary"></i>Avenu Bila Zagré</p>
+              <p>
+                <i class="fas fa-envelope me-3 text-secondary"></i>
+                IntelcorOuaga1@gmail.com
+              </p>
+              <p><i class="fas fa-phone me-3 text-secondary"></i> +226 64 05 85 72</p>
+              <p><i class="fas fa-print me-3 text-secondary"></i> +226 01 71 08 72 </p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+      <!-- Section: Links  -->
+    
+      <!-- Copyright -->
+      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+        © 2021 APT-GET:
+        <a class="text-reset fw-bold" href="https://apt-get.com/">BONI_apt-get.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+{% endblock %}
+
+
+
+{% block js %}
+<script type="text/javascript">
+ 
+  if(localStorage.getItem('Panier') == null){
+    var Panier= {};
+  }else{
+    Panier=JSON.parse(localStorage.getItem('Panier'));
+  }
+  var total=0;
+  var nombre=0;
+  for(item in Panier){
+    let nom=Panier[item][1];
+    let quantite=Panier[item][0];
+    let prix = Panier[item][2];
+    nombre +=quantite;
+    total +=prix;
+    let itemString =` <li class="list-group-item d-flex justify-content-between align-items-center">
+    ${nom}
+    <span class = "badge badge-primary badge-pill">quantite ${quantite}</span>
+    <span class = "badge badge-warming badge-pill">FCFA ${prix}</span>
+    </li>`;
+    $('#item-list').append(itemString);
+  
+  }
+  let itemnombre =` <li class="list-group-item d-flex justify-content-between align-items-center">
+    <b class="bg-danger" > PRIX ET QUANTITÉ TOTALE: </b>
+    <span class = "badge badge-primary badge-pill"> T_quantité : ${nombre}</span>
+    <span class = "badge badge-danger badge-pill"> TOTAL: ${total}</span>
+    </li>`;
+    $('#item-list').append(itemnombre);
+
+  $('#items').val(JSON.stringify(Panier));
+
+</script>
+
+
+{%endblock%}

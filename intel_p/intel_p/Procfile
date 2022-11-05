@@ -1,0 +1,1 @@
+web gunicorn intel_p.wsgi:application --log-file -
